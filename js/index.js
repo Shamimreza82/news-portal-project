@@ -29,19 +29,23 @@ const Iddata = async (catagoriID) => {
     const data = await res.json();
     const iddata = data.data; 
 
-iddata.forEach(element => {
+
     const newsDisplay = document.getElementById("newsDisplay");
-    const div = document.createElement('div')
+    newsDisplay.innerHTML = " "
+
+iddata?.forEach(element => {
+    const div = document.createElement('div');
     div.innerHTML = `
-            <!-- <div class="card card-compact w-96 bg-base-100 shadow-xl h-[400px]">
-                    <figure><img src="/></figure>
-                    <div class="card-body">
-                      <h2 class="card-title">Shoes!</h2>
-                      <p>If a dog chews shoes whose shoes does he choose?</p>
-                    </div>
-                </div> -->
+    <div class="card card-compact bg-base-100 shadow-xl">
+    <figure><img src=${element.image_url}/></figure>
+    <div class="card-body">
+      <h2 class="card-title">${element.title}</h2>
+      <p>If a dog chews shoes whose shoes does he choose?</p>
+      
+    </div>
+  </div>
     `; 
-    newsDisplay.appendChild(div)
+   newsDisplay.appendChild(div);
     console.log (element)
 })
 
