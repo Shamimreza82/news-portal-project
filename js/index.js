@@ -15,7 +15,8 @@ const displayData = (data) => {
         const news = document.getElementById ('displayNews');
         const div = document.createElement ('div');
         div.innerHTML = `
-        <h1 onclick="Iddata('${element.category_id}')">${element.category_name} </h1>
+        <h1  class="bg-lime-300 text-black p-4 rounded-md cursor-pointer
+        font-bold hover:bg-slate-300" onclick="Iddata('${element.category_id}')">${element.category_name} </h1>
         `
         news.appendChild(div)
         // console.log (element)
@@ -49,7 +50,7 @@ iddata?.forEach(element => {
                       <div>
                         <img class="w-[50px] rounded-full" src=${element.author.img} alt="">
                       </div>
-                      <div class="lg:mr-16">
+                      <div class="mr-16">
                         <h4>J${element.author.name}</h4>
                         <h4>${element.author.published_date}</h4>
                       </div>
