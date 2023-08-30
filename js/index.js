@@ -37,13 +37,26 @@ iddata?.forEach(element => {
     const div = document.createElement('div');
     div.innerHTML = `
     <div class="card card-compact bg-base-100 shadow-xl">
-    <figure><img src=${element.image_url}/></figure>
-    <div class="card-body">
-      <h2 class="card-title">${element.title}</h2>
-      <p>If a dog chews shoes whose shoes does he choose?</p>
-      
-    </div>
-  </div>
+                  <figure><img src=${element.image_url}/></figure>
+                  <div class="card-body">
+                    <div class="flex justify-between">
+                      <h2 class="card-title">${element.title.slice(0,58)}</h2>
+                      <button class="btn btn-primary rounded-full">${element.rating.badge}</button>
+                    </div>
+                    <p>If a dog chews shoes whose shoes does he choose?</p>
+                    <h2>Total Viws: ${element.total_view || " "}</h2>
+                     <div class="flex justify-between items-center">
+                      <div>
+                        <img class="w-[50px] rounded-full" src=${element.author.img} alt="">
+                      </div>
+                      <div class="lg:mr-16">
+                        <h4>J${element.author.name}</h4>
+                        <h4>${element.author.published_date}</h4>
+                      </div>
+                      <button class="btn btn-primary rounded-full">ditiles</button>
+                     </div> 
+                  </div>
+                </div>
     `; 
    newsDisplay.appendChild(div);
     console.log (element)
